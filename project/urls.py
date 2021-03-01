@@ -16,12 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.conf import settings
 from django.urls import include, path
-# from . import views
+from core import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', include('project.urls'))
-    path('', project.album_list, name='album_list'),
+    path('', views.album_list, name='home'),
 ]
 
 if settings.DEBUG:
