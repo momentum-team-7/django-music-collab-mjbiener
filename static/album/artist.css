@@ -3,12 +3,12 @@
 
 }
 
-.albums{
+.artists{
     font-weight: bold;  
     text-align: center
 }
 
-#album-list {
+#artist-list {
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;

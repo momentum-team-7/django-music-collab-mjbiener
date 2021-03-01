@@ -1,0 +1,25 @@
+.albums {
+    font-weight: bold;  
+    text-align: center
+}
+
+
+.artists {
+    font-weight: bold;  
+    text-align: center
+}
+
+/* #album-list {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;    
+}
+
+
+#album-list {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;    
+} */

@@ -20,7 +20,9 @@ from core import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.album_list, name='home'),
+    path('', views.home, name='home'),
+    path('artists/', views.artist_list, name='artist'),
+    path('albums/', views.album_list, name='albums'),
 ]
 
 if settings.DEBUG:

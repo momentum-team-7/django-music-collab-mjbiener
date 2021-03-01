@@ -5,26 +5,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href= "{% static '/album/artist.css' %}">
+    <link rel="stylesheet" href= "{% static '/album/album.css' %}">
 
     <title>DjangoMusic</title>
 </head>
 <body>
     <h2>
         <a href="..">Home</a>
-        <a href="/albums">Albums</a>
+        <a href="/artists">Artists</a>
     </h2>
     <br>
-    <div class="artists">
-        <a href="">Artist</a>
-    
+    <div class="albums">
+        <a href="">Albums</a>
 
-    {% for artist in artists %}
-    <ul id= "artist-list">
-    <li>{{artist}}</li>
-    </ul>    
-    {% endfor %}
+        {% for album in albums %}
+        <ul id= "album-list">
+        <li>{{album}}</li>
+        </ul>    
+        {% endfor %}
     </div>
-    
 </body>
 </html>
