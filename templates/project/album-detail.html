@@ -9,24 +9,22 @@
 
     <title>DjangoMusic</title>
 </head>
-
 <body>
     <h2>
         <a href="/">Home</a>
+        <a href="..">Albums</a>
         <a href="/artists">Artists</a>
-        <a href="">Albums</a>
     </h2>
     <br>
-    <div class="albums">Albums</a>
-
-        {% for album in albums %}
+    <div class="albums">Album Details</a>
+        <br>
         <ul id= "album-list">
-            <li><a href="{% url 'album-detail' album.pk %}">{{album.title}}</a></li>
-            <!-- Artist: {{ album.artist.name }}<br>
-            Released: {{ album.release_year }}</li> -->
-            <!-- <li>{{album}}</li> -->
+            <li>{{ album.title }}<br>
+            Artist:<li><a href="{% url 'artist-detail' album.artist.pk %}">{{album.artist.name}}</a><br></li>
+            {% if album.release_year %}
+            Released: {{ album.release_year }}</li>
+            {% endif %}
         </ul>    
-        {% endfor %}
     </div>
 </body>
-    </html>
+</html>

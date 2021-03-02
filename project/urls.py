@@ -23,6 +23,8 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('artists/', views.artist_list, name='artist'),
     path('albums/', views.album_list, name='albums'),
+    path('albums/<int:pk>/', views.album_detail, name='album-detail'),
+    path('artists/<int:pk>/', views.artist_detail, name='artist-detail'),
 ]
 
 if settings.DEBUG:
