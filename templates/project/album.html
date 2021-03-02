@@ -16,11 +16,13 @@
     </h2>
     <br>
     <div class="albums">
-        <a href="">Albums</a>
+        <a href="">Album</a>
 
         {% for album in albums %}
         <ul id= "album-list">
-        <li>{{album}}</li>
+            <li>{{ album.title }} {{ album.release_year }}<br>Artist: {{ album.artist.name }}
+            </li>
+            <!-- <li>{{album}}</li> -->
         </ul>    
         {% endfor %}
     </div>
