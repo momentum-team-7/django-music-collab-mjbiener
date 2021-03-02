@@ -1,3 +1,7 @@
+body {
+    background-color: rgb(112, 153, 206);
+}
+
 .albums {
     font-weight: bold;  
     text-align: center;

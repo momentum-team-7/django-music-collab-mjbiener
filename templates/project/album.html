@@ -13,15 +13,16 @@
 <body>
     <h2>
         <a href="/">Home</a>
-        <a href="/artists">Artists</a>
         <a href="">Albums</a>
+        <a href="/artists">Artists</a>
     </h2>
     <br>
     <div class="albums">Albums</a>
 
         {% for album in albums %}
         <ul id= "album-list">
-            <li><a href="{% url 'album-detail' album.pk %}">{{album.title}}</a></li>
+            <li><img src="{{ album.album_photo }}" alt="{{album.title}}"><br>
+                <a href="{% url 'album-detail' album.pk %}">{{album.title}}</a></li>
             <!-- Artist: {{ album.artist.name }}<br>
             Released: {{ album.release_year }}</li> -->
             <!-- <li>{{album}}</li> -->

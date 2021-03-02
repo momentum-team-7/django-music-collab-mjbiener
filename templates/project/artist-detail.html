@@ -13,14 +13,18 @@
     <h2>
         <a href="/">Home</a>
         <a href="/albums">Albums</a>
-        <a href="..">Artists</a>
+        <a href="/artists">Artists</a>
     </h2>
     <br>
     <div class="artists">Artist Details
         <ul id="artist-details">Albums
             <br>
+            <br>
         {% for album in artist.albums.all %}
-        <li><a href="{% url 'album-detail' album.pk %}">{{album.title}}</a><br></li>
+        <li><img src="{{ album.album_photo }}" alt="{{album.title}}"><br>
+            <a href="{% url 'album-detail' album.pk %}">{{album.title}}</a><br>
+            <br>
+        </li>
         {% endfor %}
         </ul>     
     </div>

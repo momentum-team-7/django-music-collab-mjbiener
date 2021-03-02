@@ -1,6 +1,5 @@
-. body {
-    color:blue;
-
+body {
+    background-color: rgb(112, 153, 206);
 }
 
 .artists{
@@ -13,4 +12,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;    
+}
+
+#artist-details {
+    list-style-type: none;
 }
