@@ -17,8 +17,6 @@
     </h2>
     <br>
     <div class="artists">Artists
-    
-
     {% for artist in artists %}
     <ul id= "artist-list">
         <li><a href="{% url 'artist-detail' artist.pk %}">{{artist.name}}</a></li>

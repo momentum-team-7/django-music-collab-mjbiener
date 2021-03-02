@@ -21,7 +21,7 @@
             <br>
             <br>
         {% for album in artist.albums.all %}
-        <li><img src="{{ album.album_photo }}" alt="{{album.title}}"><br>
+        <li><a href="{% url 'album-detail' album.pk %}"><img src="{{ album.album_photo }}" alt="{{album.title}}"></a><br>
             <a href="{% url 'album-detail' album.pk %}">{{album.title}}</a><br>
             <br>
         </li>
