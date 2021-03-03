@@ -65,3 +65,55 @@ def add_album(request):
         form = AlbumForm()
 
     return render(request, 'project/add-album.html', {'form': form})
+
+def edit_artist(request, pk):
+    # get the instance of the Artist model from the database
+    artist = get_object_or_404(Artist, pk=pk)
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = ArtistForm(request.POST, instance=artist)
+        # check whether it's valid:
+        if form.is_valid():
+            # process the data in form.cleaned_data as required
+            form.save()
+            # redirect to a new URL:
+            return HttpResponseRedirect('/')
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = ArtistForm(instance=artist)
+
+    return render(request, 'project/edit-artist.html', {'form': form, 'artist' : artist})
+
+
+def delete_artist(request, pk):
+    artist = get_object_or_404(Artist, pk=pk)
+    artist.delete()
+    return HttpResponseRedirect('/')
+
+
+def edit_album(request, pk):
+    # get the instance of the Artist model from the database
+    album = get_object_or_404(Album, pk=pk)
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = AlbumForm(request.POST, instance=album)
+        # check whether it's valid:
+        if form.is_valid():
+            # process the data in form.cleaned_data as required
+            form.save()
+            # redirect to a new URL:
+            return HttpResponseRedirect('/')
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = AlbumForm(instance=album)
+    return render(request, 'project/edit-album.html', {'form': form, 'album' : album})
+
+
+def delete_album(request, pk):
+    album = get_object_or_404(Album, pk=pk)
+    album.delete()
+    return HttpResponseRedirect('/')

@@ -2,6 +2,18 @@ body {
     background-color: rgb(112, 153, 206);
 }
 
+.header {
+    text-align: center;
+}
+
+.topnav {
+    font-weight: bold;  
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
 .albums {
     font-weight: bold;  
     text-align: center
@@ -12,4 +24,25 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;    
+}
+
+.button {
+    
+    width: 2rem;
+    height: 1rem;
+    background: #000000;
+    padding: 2px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+}
+
+li {
+    text-align: center;
+    margin: .2em;
+    background-color: white;
+    border: solid black 3px;
+    border-radius: .5em;
 }

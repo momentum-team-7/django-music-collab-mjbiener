@@ -13,15 +13,15 @@
 <body>
     <h2>
         <a href="/">Home</a>
-        <a href="/albums">Albums</a>
+        <a href="">Albums</a>
         <a href="/artists">Artists</a>
     </h2>
     {% block content %}
-<form action="{% url 'add-artist' %}" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit">
-</form>
+    <form action="{% url 'edit-album' pk=album.pk %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit">
+    </form>
 {% endblock content %}
 </body>
     </html>

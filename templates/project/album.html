@@ -9,27 +9,36 @@
 
     <title>DjangoMusic</title>
 </head>
-
 <body>
-    <h2>
+    <header class="header">
+        <h1>DJANGO MUSIC</h1>
+    </header>
+    <br>
+    <div class="topnav">
+        <h2>
         <a href="/">Home</a>
         <a href="">Albums</a>
         <a href="/artists">Artists</a>
-        <a href="/albums/new">Add Album</a>
-        <a href="/artists/new">Add Artist</a>
-    </h2>
+        </h2>
+    </div>
+    <div class="add">
+    <h3>
+        <a href="/albums/new"class="button">Add Album</a>
+        <a href="/artists/new"class="button">Add Artist</a>
+    </h3>
+    </div>
     <br>
-    <div class="albums">Albums</a>
+    <div class="albums"><h2>Albums</h2>
 
-        {% for album in albums %}
         <ul id= "album-list">
+        {% for album in albums %}
             <li><a href="{% url 'album-detail' album.pk %}"><img src="{{ album.album_photo }}" alt="{{album.title}}"></a><br>
-                <a href="{% url 'album-detail' album.pk %}">{{album.title}}</a></li>
-            <!-- Artist: {{ album.artist.name }}<br>
-            Released: {{ album.release_year }}</li> -->
-            <!-- <li>{{album}}</li> -->
-        </ul>    
-        {% endfor %}
+                <a href="{% url 'album-detail' album.pk %}">{{album.title}}</a><br><br>
+                <a href="{% url 'edit-album' pk=album.pk%}" class="button">Edit Album</a>
+                <a href="{% url 'delete-album' pk=album.pk%}" class="button">Delete Album</a><br><br>
+            </li> 
+                {% endfor %}
+        </ul>
     </div>
 </body>
     </html>

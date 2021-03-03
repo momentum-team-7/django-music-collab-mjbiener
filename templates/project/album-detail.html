@@ -10,21 +10,36 @@
     <title>DjangoMusic</title>
 </head>
 <body>
-    <h2>
-        <a href="/">Home</a>
-        <a href="/albums">Albums</a>
-        <a href="/artists">Artists</a>
-    </h2>
+    <header class="header">
+        <h1>DJANGO MUSIC</h1>
+    </header>
     <br>
-    <div class="albums">Album Details</a>
+    <div class="topnav">
+        <h2>
+        <a href="/">Home</a>
+        <a href="">Albums</a>
+        <a href="/artists">Artists</a>
+        </h2>
+    </div>
+    <div class="add">
+    <h3>
+        <a href="/albums/new"class="button">Add Album</a>
+        <a href="/artists/new"class="button">Add Artist</a>
+    </h3>
+    </div>
+    <br>
+    <div class="albums"><h2>Album Details</h2>
         <br>
         <ul id= "album-list">
             <li><img src="{{ album.album_photo }}" alt="{{album.title}}"><br>
                 {{ album.title }}<br>
             Artist:<a href="{% url 'artist-detail' album.artist.pk %}">{{album.artist.name}}</a><br>
             {% if album.release_year %}
-            Released: {{ album.release_year }}</li>
-            {% endif %}
+            Released: {{ album.release_year }}
+            {% endif %} <br><br>
+            <a href="{% url 'edit-album' pk=album.pk%}" class="button">Edit Album</a>
+            <a href="{% url 'delete-album' pk=album.pk%}" class="button">Delete Album</a><br><br>
+            </li>
         </ul>    
     </div>
 </body>
